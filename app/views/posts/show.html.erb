@@ -1,2 +1,9 @@
-<h1>You are on show page</h1>
-<h2>head:<%= @post.title %></h2>
+<div class="container" style="color: greenyellow">
+<h4>You are on show page :<%= @post.title %></h4>
+<h5>Content :<%= @post.content %></h5>
+<h5>Author: <%= @post.user.name %></h5>
+<h5>Author-Email: <%= @post.user.email %></h5>
+<h5>Created at: <%= @post.created_at %></h5>
+<h5>Category: <%= @post.category.name %></h5>
+<h5>Branch: <%= @post.category.branch %></h5>
+</div>

@@ -37,11 +37,23 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to root_path
   end
+
+  def hobby
+
+   end
+
+  def study
+   end
+
+  def team
+   end
+
+
+  private
+
   def post_params
     params.require(:post).permit(:title,:content)
   end
-  private
-
 
   def set_post
     @post=Post.find(params[:id])
