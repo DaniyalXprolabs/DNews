@@ -29,7 +29,7 @@
     </ul>
    </div>
   <% if user_signed_in? %>
-    <h6 class="text-white"><%= current_user.email %></h6>
+    <h6 class="text-white"><%= current_user.name %></h6>
     <%= link_to "Account Settings", edit_user_registration_path,  class: 'btn btn-outline-info', style: 'margin-right:20px;' %>
     <%= link_to "Logout", destroy_user_session_path,method: :delete, class: 'btn btn-outline-danger', style: 'margin-right:20px;' %>
 <% else %>
