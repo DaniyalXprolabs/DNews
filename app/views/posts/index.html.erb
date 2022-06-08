@@ -1,15 +1,28 @@
 <div class="container">
 <div class="row">
-  <div id="side-menu"  class="col-sm-3">
+  <div id="side-menu"  class="col-sm-3" style="color: #EFEFEF">
     <h2>Categories Available</h2>
-    <ol>
-    <% @post.each do |c| %>
-    <li><% c.title %></li>
+
+    <% @categories.each do |c| %>
+      <hr>
+    <li><h4><%= c.name %></h4></li>
+      <hr>
     <% end %>
-    </ol>
+
   </div><!-- side-menu -->
 
   <div id="main-content" class="col-sm-9">
+    <!--Card -->
+    <% @posts.each do |p| %>
+      <div class="card" style="margin: 20px;border: 5px solid blue;" >
+        <div class="card-body">
+          <h5 class="card-title"><i class="fa-solid fa-user"></i> <%= p.user.name %></h5>
+          <h5 class="card-subtitle mb-2  "><%= p.title %></h5>
+<%= render 'modal' %>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+  <% end %>
   </div><!-- main-content -->
 
 </div><!-- row -->
