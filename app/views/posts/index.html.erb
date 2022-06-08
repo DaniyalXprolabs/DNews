@@ -13,13 +13,13 @@
 
   <div id="main-content" class="col-sm-9">
     <!--Card -->
-    <% @posts.each do |p| %>
+    <% @posts.each do |post| %>
       <div class="card" style="margin: 20px;border: 5px solid blue;" >
         <div class="card-body">
-          <h5 class="card-title"><i class="fa-solid fa-user"></i> <%= p.user.name %></h5>
-          <h5 class="card-subtitle mb-2  "><%= p.title %></h5>
-<%= render 'modal' %>
-          <a href="#" class="card-link">Another link</a>
+          <h5 class="card-title"><i class="fa-solid fa-user"></i> <%= post.user.name %></h5>
+          <h5 class="card-subtitle mb-2  "><%= post.title %></h5>
+
+          <%= render "posts/modal", post: post %>
         </div>
       </div>
   <% end %>
