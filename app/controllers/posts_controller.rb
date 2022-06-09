@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_post , only: [:show,:destroy,:update,:edit]
   def index
-    @posts=Post.all
-    @categories=Category.limit(21)
+    @posts = Post.paginate(page: params[:page], per_page: 5).order(id: :desc) 
+    #@posts=Post.paginate(page: params[:page], per_page:5).order(id: :desc)
+    @categories=Category.limit(10)
   end
 
   def show
@@ -39,18 +40,23 @@ class PostsController < ApplicationController
   end
 
   def hobby
-
+    posts_for_branch(params[:action])
    end
 
   def study
+    posts_for_branch(params[:action])
    end
 
   def team
+    posts_for_branch(params[:action])
    end
 
 
   private
 
+  def posts_for_branch(branch)
+
+  end
   def post_params
     params.require(:post).permit(:title,:content)
   end
